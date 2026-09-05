@@ -1,0 +1,62 @@
+{
+  "name": "@brip/glyphscramble-react",
+  "version": "0.1.0-beta.0",
+  "description": "React components for GlyphScramble payloads.",
+  "keywords": [
+    "anti-scraping",
+    "font",
+    "react",
+    "unicode",
+    "woff2"
+  ],
+  "author": "BRIP Engineering <eng@brip.io> (https://brip.io)",
+  "homepage": "https://github.com/brip-io/glyphscramble#readme",
+  "bugs": {
+    "url": "https://github.com/brip-io/glyphscramble/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brip-io/glyphscramble.git",
+    "directory": "packages/react"
+  },
+  "license": "Apache-2.0",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./server": {
+      "types": "./dist/server.d.ts",
+      "import": "./dist/server.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@brip/glyphscramble": "workspace:^",
+    "server-only": "0.0.1"
+  },
+  "peerDependencies": {
+    "react": ">=18 <20"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.12",
+    "react": "^19.1.1"
+  }
+}

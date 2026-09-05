@@ -1,0 +1,61 @@
+{
+  "name": "@brip/glyphscramble-sveltekit",
+  "version": "0.1.0-beta.0",
+  "description": "SvelteKit handle and endpoint integration for GlyphScramble.",
+  "keywords": [
+    "anti-scraping",
+    "font",
+    "svelte",
+    "sveltekit",
+    "woff2"
+  ],
+  "author": "BRIP Engineering <eng@brip.io> (https://brip.io)",
+  "homepage": "https://github.com/brip-io/glyphscramble#readme",
+  "bugs": {
+    "url": "https://github.com/brip-io/glyphscramble/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brip-io/glyphscramble.git",
+    "directory": "packages/sveltekit"
+  },
+  "license": "Apache-2.0",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@brip/glyphscramble": "workspace:^",
+    "@brip/glyphscramble-svelte": "workspace:^"
+  },
+  "peerDependencies": {
+    "@sveltejs/kit": ">=2 <3",
+    "svelte": ">=5 <6"
+  },
+  "devDependencies": {
+    "@sveltejs/kit": "2.70.3",
+    "@sveltejs/vite-plugin-svelte": "7.3.0",
+    "svelte": "5.57.0",
+    "vite": "8.2.2"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "name": "@brip/glyphscramble-vite",
+  "version": "0.1.0-beta.0",
+  "description": "Vite SSR primitives and explicitly per-build static GlyphScramble plugin.",
+  "keywords": [
+    "anti-scraping",
+    "font",
+    "static-site",
+    "vite",
+    "woff2"
+  ],
+  "author": "BRIP Engineering <eng@brip.io> (https://brip.io)",
+  "homepage": "https://github.com/brip-io/glyphscramble#readme",
+  "bugs": {
+    "url": "https://github.com/brip-io/glyphscramble/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brip-io/glyphscramble.git",
+    "directory": "packages/vite"
+  },
+  "license": "Apache-2.0",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@brip/glyphscramble": "workspace:^"
+  },
+  "peerDependencies": {
+    "vite": ">=7 <9"
+  },
+  "devDependencies": {
+    "vite": "8.2.2"
+  }
+}

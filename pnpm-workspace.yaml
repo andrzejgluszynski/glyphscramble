@@ -1,0 +1,20 @@
+packages:
+  - apps/*
+  - packages/*
+  - examples/*
+
+allowBuilds:
+  esbuild: false
+
+autoInstallPeers: false
+
+onlyBuiltDependencies:
+  - woff2-encoder
+
+ignoredBuiltDependencies:
+  - esbuild
+
+confirmModulesPurge: false
+
+minimumReleaseAgeExclude:
+  - astro@7.3.1

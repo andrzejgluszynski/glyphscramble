@@ -1,0 +1,64 @@
+{
+  "name": "@brip/glyphscramble-svelte",
+  "version": "0.1.0-beta.0",
+  "description": "Svelte component and action for GlyphScramble payloads.",
+  "keywords": [
+    "anti-scraping",
+    "font",
+    "svelte",
+    "unicode",
+    "woff2"
+  ],
+  "author": "BRIP Engineering <eng@brip.io> (https://brip.io)",
+  "homepage": "https://github.com/brip-io/glyphscramble#readme",
+  "bugs": {
+    "url": "https://github.com/brip-io/glyphscramble/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brip-io/glyphscramble.git",
+    "directory": "packages/svelte"
+  },
+  "license": "Apache-2.0",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js",
+      "import": "./dist/index.js"
+    },
+    "./GlyphScramble.svelte": {
+      "types": "./dist/GlyphScramble.svelte.d.ts",
+      "svelte": "./dist/GlyphScramble.svelte",
+      "default": "./dist/GlyphScramble.svelte"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "pnpm run clean && svelte-package -i src -o dist",
+    "clean": "rm -rf dist",
+    "typecheck": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "dependencies": {
+    "@brip/glyphscramble": "workspace:^"
+  },
+  "peerDependencies": {
+    "svelte": ">=5 <6"
+  },
+  "devDependencies": {
+    "@sveltejs/package": "2.5.8",
+    "svelte": "5.57.0",
+    "svelte-check": "4.7.6"
+  }
+}

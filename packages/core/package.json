@@ -1,0 +1,78 @@
+{
+  "name": "@brip/glyphscramble",
+  "version": "0.1.0-beta.0",
+  "description": "Core engine and CLI for per-response glyph scrambling.",
+  "keywords": [
+    "anti-scraping",
+    "font",
+    "opentype",
+    "privacy",
+    "unicode",
+    "woff2"
+  ],
+  "author": "BRIP Engineering <eng@brip.io> (https://brip.io)",
+  "homepage": "https://github.com/brip-io/glyphscramble#readme",
+  "bugs": {
+    "url": "https://github.com/brip-io/glyphscramble/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brip-io/glyphscramble.git",
+    "directory": "packages/core"
+  },
+  "license": "Apache-2.0",
+  "type": "module",
+  "sideEffects": false,
+  "bin": {
+    "glyphscramble": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./runtime": {
+      "types": "./dist/browser.d.ts",
+      "import": "./dist/browser.js"
+    },
+    "./woff2-worker": {
+      "types": "./dist/woff2-worker.d.ts",
+      "import": "./dist/woff2-worker.mjs",
+      "default": "./dist/woff2-worker.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "pnpm run check:version && pnpm run clean && tsc -p tsconfig.json && node scripts/build-browser.mjs && node scripts/build-worker.mjs",
+    "generate:version": "node scripts/generate-version.mjs",
+    "check:version": "node scripts/generate-version.mjs --check",
+    "clean": "rm -rf dist",
+    "typecheck": "pnpm run check:version && tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "css-tree": "^3.2.1",
+    "jiti": "^2.6.1",
+    "parse5": "^8.0.0",
+    "spdx-expression-parse": "^4.0.0",
+    "undici": "^7.29.0",
+    "woff2-encoder": "^2.0.0"
+  },
+  "devDependencies": {
+    "@fontsource-variable/inter": "5.3.0",
+    "@types/css-tree": "^3.2.0",
+    "@types/spdx-expression-parse": "^4.0.0",
+    "esbuild": "^0.28.2"
+  }
+}
